@@ -7,50 +7,29 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
   </head>
   <body>
-    <section class="hero is-info is-fullheight">
-      <div class="hero-head">
-	<nav class="navbar">
-	  <div class="container">
-	    <div class="navbar-brand">
-	      <a class="navbar-item" href="/">
-		Olzhas Arystanov
-	      </a>
-	      <span class="navbar-burger burger" data-target="navbarMenuHeroB">
-		<span></span>
-		<span></span>
-		<span></span>
-	      </span>
-	    </div>
-	    <div id="navbarMenuHeroB" class="navbar-menu">
-	      <div class="navbar-end">
-		<a class="navbar-item">
-		  Portfolio
-		</a>
-		<span class="navbar-item">
-		  <a class="button is-info is-inverted" href="https://github.com/olzhasar" target="_blank">
-		    <span class="icon">
-		      <i class="fab fa-github"></i>
-		    </span>
-		    <span>Github</span>
-		  </a>
-		</span>
-	      </div>
-	    </div>
-	  </div>
-	</nav>
-      </div>
 
-      <div class="hero-body">
-	<div class="container has-text-centered">
-	  <p class="title">
-	    Personal portfolio & blog
-	  </p>
-	  <p class="subtitle">
-	    Currently under development
-	  </p>
-	</div>
-      </div>
+    <div id="particles-js"></div>
 
-    </section>
+    <div class="home-title">
+      <h1 class="title">Olzhas Arystanov</h1>
+      <p>Software Engineer, finance professional</p>
+	<a class="button is-large is-dark" href="">
+	  <span>My Projects</span>
+	</a>
+	<a class="button is-large is-dark is-outlined" href="https://github.com/olzhasar" target="_blank">
+	  <span class="icon">
+	    <i class="fab fa-github"></i>
+	  </span>
+	  <span>GitHub</span>
+	</a>
+    </div>
+
+    <script src="/theme/js/particles.min.js"></script>
+    <script type="text/javascript">
+      particlesJS.load('particles-js', '/theme/assets/particles.json', function() {
+	  console.log('callback - particles.js config loaded');
+      });
+    </script>
+
   </body>
 </html>
