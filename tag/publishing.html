@@ -1,37 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>My custom Bulma website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Olzhas Arystanov - publishing tag</title>
     <link rel="stylesheet" href="/theme/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
   </head>
   <body>
-    <h1 class="title">
-      Bulma
-    </h1>
 
-    <p class="subtitle">
-      Modern CSS framework based on <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox">Flexbox</a>
-    </p>
+<div id="particles-js"></div>
 
-    <div class="field">
-      <div class="control">
-	<input class="input" type="text" placeholder="Input">
-      </div>
-    </div>
+<div class="home-title">
+  <h1 class="title">Olzhas Arystanov</h1>
+  <p>Software Engineer, finance professional</p>
+  <a class="button is-large is-dark" href="/projects">
+    <span>My Projects</span>
+  </a>
+  <a class="button is-large is-dark is-outlined" href="https://github.com/olzhasar" target="_blank">
+    <span class="icon">
+      <i class="fab fa-github"></i>
+    </span>
+    <span>GitHub</span>
+  </a>
+</div>
 
-    <div class="field">
-      <p class="control">
-	<span class="select">
-	  <select>
-	    <option>Select dropdown</option>
-	  </select>
-	</span>
-      </p>
-    </div>
+<script src="/theme/js/particles.min.js"></script>
+<script type="text/javascript">
+  particlesJS.load('particles-js', '/theme/assets/particles.json', function() {
+    console.log('callback - particles.js config loaded');
+  });
+</script>
 
-    <div class="buttons">
-      <a class="button is-primary">Primary</a>
-      <a class="button is-link">Link</a>
-    </div>
+
   </body>
 </html>
