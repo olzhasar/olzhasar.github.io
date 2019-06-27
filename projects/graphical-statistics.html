@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Olzhas Arystanov - projects - Graphical statistics website</title>
+    <title>Olzhas Arystanov - projects - Graphical statistics</title>
     <link rel="stylesheet" href="/theme/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
   </head>
@@ -47,11 +47,11 @@
 	<ul>
 	  <li><a href="/">Home</a></li>
 <li><a href="/projects" aria-current="page">Projects</a></li>
-<li class="is-active"><a href="#" aria-current="page">Graphical statistics website</a></li>
+<li class="is-active"><a href="#" aria-current="page">Graphical statistics</a></li>
 	</ul>
       </nav>   
       <h1 class="title">
-Graphical statistics website
+Graphical statistics
       </h1>
     </div>
   </div>
@@ -60,7 +60,14 @@ Graphical statistics website
 
 <section class="section">
   <div class="container">
-<div class="columns">
+<div class="columns is-variable is-6">
+  <div class="column is-7">
+    <div class="content">
+      <h2>Website for displaying different statistical data of Kazakhstan in graphical format.</h2>
+      <p>Data for this website was obtained from official governmental statistics agency's website. The raw file was in .xls format and contained a lot of "dirty" values with unexpected characters in number cells, etc. I used xlrd python library to extract data from the file row by row and applied regular expressions for cleaning. Processed data was written to a new file that was further imported to pandas for final modifications and exporting to HDF5 format to use in production. HDF format showed superior performance compared to SQL databases and served well as data wasn't modified by users of this website. Final web application was based on Flask microframework and used open source Bootstrap admin template.</p>
+<p>This is my personal side project. I was the only developer.</p>
+    </div>
+  </div>
   <div class="column is-5">
     <div class="columns is-multiline">
       <div class="column is-4">
@@ -70,26 +77,26 @@ Graphical statistics website
 	2010
       </div>
       <div class="column is-4">
+	<strong>Source code:</strong>
+      </div>
+      <div class="column is-8">
+	<a class="button is-outlined" href="https://github.com/olzhasar/statkz-old" target="_blank">
+	    <span class="icon">
+	      <i class="fab fa-github"></i>
+	    </span>
+	    <span>GtiHub</span>
+	  </a>
+      </div>
+      <div class="column is-4">
 	<strong>Technologies:</strong>
       </div>
       <div class="column is-8">
-	<span class="tag is-dark">django</span>
 	<span class="tag is-dark">python</span>
+	<span class="tag is-dark">flask</span>
+	<span class="tag is-dark">pandas</span>
+	<span class="tag is-dark">javascript</span>
+	<span class="tag is-dark">chart.js</span>
       </div>
-      <div class="column is-4">
-	<strong>Role:</strong>
-      </div>
-      <div class="column is-8">
-	
-      </div>
-    </div>
-  </div>
-  <div class="column is-7">
-    <div class="content">
-      <p><strong>Description:</strong></p>
-      <p>Website for displaying different statistical data of Kazakhstan in graphical format.</p>
-<p>Data for this website was obtained from official governmental statistics agency's website. The raw file was in .xls format and contained a lot of "dirty" values with unexpected characters in number cells, etc. I used xlrd python library to extract data from the file row by row and applied regular expressions for cleaning. Processed data was written to a new file that was further imported to pandas for final modifications and exporting to HDF5 format to use in production. HDF format showed superior performance compared to SQL databases and served well as data wasn't modified by users of this website. Final web application was based on Flask microframework and used open source Bootstrap admin template.</p>
-<p>This is my personal side project. I was the only developer.</p>
     </div>
   </div>
 </div>
@@ -97,7 +104,7 @@ Graphical statistics website
 </section>
 
 
-    <script type="text/javascript">
+    <script>
       document.addEventListener('DOMContentLoaded', () => {
 
 	// Get all "navbar-burger" elements
