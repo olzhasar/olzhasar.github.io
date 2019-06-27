@@ -2,13 +2,131 @@
 <html lang="en">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Olzhas Arystanov - Benefits - employee engagement platform</title>
+    <title>Olzhas Arystanov - projects - Benefits - employee engagement platform</title>
     <link rel="stylesheet" href="/theme/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
   </head>
   <body>
 
 
+<nav class="navbar is-dark">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+	<strong>
+	  Olzhas Arystanov
+	</strong>
+      </a>
+      <span class="navbar-burger burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+	<span></span>
+	<span></span>
+	<span></span>
+      </span>
+    </div>
+    <div id="navMenu" class="navbar-menu">
+      <div class="navbar-end">
+	<a class="navbar-item" href="">About me</a>
+	<a class="navbar-item" href="">Contacts</a>
+	<span class="navbar-item">
+	  <a class="button" href="https://github.com/olzhasar" target="_blank">
+	    <span class="icon">
+	      <i class="fab fa-github"></i>
+	    </span>
+	    <span>Check my GitHub</span>
+	  </a>
+	</span>
+      </div>
+    </div>
+  </div>
+</nav>
+<section class="hero is-info is-small category-hero">
 
+  <div class="hero-body">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="breadcrumbs">
+	<ul>
+	  <li><a href="/">Home</a></li>
+<li><a href="/projects" aria-current="page">Projects</a></li>
+<li class="is-active"><a href="#" aria-current="page">Benefits - employee engagement platform</a></li>
+	</ul>
+      </nav>   
+      <h1 class="title">
+Benefits - employee engagement platform
+      </h1>
+    </div>
+  </div>
+
+</section>
+
+<section class="section">
+  <div class="container">
+<div class="columns">
+  <div class="column is-5">
+    <div class="columns is-multiline">
+      <div class="column is-4">
+	<strong>Year:</strong>
+      </div>
+      <div class="column is-8">
+	2010
+      </div>
+      <div class="column is-4">
+	<strong>Technologies:</strong>
+      </div>
+      <div class="column is-8">
+	<span class="tag is-dark">django</span>
+	<span class="tag is-dark">python</span>
+      </div>
+      <div class="column is-4">
+	<strong>Role:</strong>
+      </div>
+      <div class="column is-8">
+	
+      </div>
+    </div>
+  </div>
+  <div class="column is-7">
+    <div class="content">
+      <p><strong>Description:</strong></p>
+      <p>Web application for a startup providing employee engagement services for corporate customers. The goal of the company was to aggregate diferrent discounts and special offers from various vendors and provide them as a package to companies. That way small and medium-sized companies can provide their employees with corporate perks comparable to the level of large corporations.</p>
+<p>Application has 2 different interfaces: for members (employees of customer's companies) and vendors (providers of the offers).</p>
+<p>Members that have access to the platform, can view all the perks and select those they like. After pressing "Get this perk" button a unique transaction code has been generated that was sent to the member's email. Vendors can view and manage transactions for their offers in a separate user interface.</p>
+<p>There is also a dashboard for company's administrator that can manage employees on the platform, analyze their platform-related activity.</p>
+<p>Back-end for this platform was implemented using django framework. Javascript and Bootstrap was used on the front-end side. Integration with sendgrid API for email deliveries was made.</p>
+<p>Unfortunately, this project was discontinued due to lack of demand from local businesses.</p>
+<p>I was the technical co-founder of this project responsible for developing the platform</p>
+    </div>
+  </div>
+</div>
+  </div>
+</section>
+
+
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', () => {
+
+	// Get all "navbar-burger" elements
+	const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+	// Check if there are any navbar burgers
+	if ($navbarBurgers.length > 0) {
+
+	  // Add a click event on each of them
+	  $navbarBurgers.forEach( el => {
+	    el.addEventListener('click', () => {
+
+	      // Get the target from the "data-target" attribute
+	      const target = el.dataset.target;
+	      const $target = document.getElementById(target);
+
+	      // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+	      el.classList.toggle('is-active');
+	      $target.classList.toggle('is-active');
+
+	    });
+	  });
+	}
+
+      });
+    </script>
   </body>
 </html>

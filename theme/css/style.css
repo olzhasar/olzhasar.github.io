@@ -941,7 +941,7 @@ a.has-text-danger:hover, a.has-text-danger:focus {
 
 .box {
   background-color: white;
-  border-radius: 6px;
+  border-radius: 0;
   box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
   color: #4a4a4a;
   display: block;
@@ -2213,7 +2213,7 @@ a.box:active {
   .table td,
   .table th {
     border: 1px solid #dbdbdb;
-    border-width: 0 0 1px;
+    border-width: 0;
     padding: 0.5em 0.75em;
     vertical-align: top; }
     .table td.is-white,
@@ -6453,3 +6453,6 @@ canvas {
       color: white; }
   .category-hero .title {
     color: white; }
+
+.table-wrapper {
+  overflow-x: auto; }
