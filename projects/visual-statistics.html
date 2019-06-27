@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Olzhas Arystanov - projects - Floret</title>
+    <title>Olzhas Arystanov - projects - Visual statistics</title>
     <link rel="stylesheet" href="/theme/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
   </head>
@@ -47,11 +47,11 @@
 	<ul>
 	  <li><a href="/">Home</a></li>
 <li><a href="/projects" aria-current="page">Projects</a></li>
-<li class="is-active"><a href="#" aria-current="page">Floret</a></li>
+<li class="is-active"><a href="#" aria-current="page">Visual statistics</a></li>
 	</ul>
       </nav>   
       <h1 class="title">
-Floret
+Visual statistics
       </h1>
     </div>
   </div>
@@ -63,44 +63,39 @@ Floret
 <div class="columns is-variable is-6">
   <div class="column is-7">
     <div class="content">
-      <h2>Django-powered online flower store</h2>
-      <p>Custom e-commerce engine was written from scratch using django framework. Template from themeforest was used on the front-end side.</p>
-<p><img alt="Home page" src="/projects/img/floret-catalogue-0.jpg"></p>
-<p>Django administrative interface was customized and served as a complete store management system.</p>
-<p><img alt="Home page" src="/projects/img/floret-admin-0.jpg"></p>
-<p>Implemented integration with payment processing system and e-mail delivery service (SendinBlue).
-Designed online store successfully works from the year 2016 and several redesigns and improvements were made since then (by myself).</p>
+      <h2>Website for displaying different statistical data of Kazakhstan in graphical format.</h2>
+      <p>Data for this website was obtained from official governmental statistics agency's website. The raw file was in .xls format and contained a lot of "dirty" values with unexpected characters in number cells, etc. I used xlrd python library to extract data from the file row by row and applied regular expressions for cleaning. Processed data was written to a new file that was further imported to pandas for final modifications and exporting to HDF5 format to use in production. HDF format showed superior performance compared to SQL databases and served well as data wasn't modified by users of this website. Final web application was based on Flask microframework and used open source Bootstrap admin template.</p>
+<p>This is my personal side project. I was the only developer.</p>
     </div>
   </div>
   <div class="column is-5">
     <div class="columns is-multiline">
       <div class="column is-4">
-	<strong>Contribution:</strong>
-      </div>
-      <div class="column is-8">
-	Back-end and front-end development, deployment on webfaction
-      </div>
-      <div class="column is-4">
 	<strong>Year:</strong>
       </div>
       <div class="column is-8">
-	2016
+	2017
       </div>
       <div class="column is-4">
-	<strong>URL:</strong>
+	<strong>Source code:</strong>
       </div>
       <div class="column is-8">
-	  <a href="https://www.floret.kz" target="_blank">https://www.floret.kz</a>
+	<a class="button is-outlined" href="https://github.com/olzhasar/statkz-old" target="_blank">
+	    <span class="icon">
+	      <i class="fab fa-github"></i>
+	    </span>
+	    <span>GtiHub</span>
+	  </a>
       </div>
       <div class="column is-4">
 	<strong>Technologies:</strong>
       </div>
       <div class="column is-8">
-	<span class="tag is-dark">django</span>
 	<span class="tag is-dark">python</span>
-	<span class="tag is-dark">bootstrap</span>
+	<span class="tag is-dark">flask</span>
+	<span class="tag is-dark">pandas</span>
 	<span class="tag is-dark">javascript</span>
-	<span class="tag is-dark">sendinblue</span>
+	<span class="tag is-dark">chart.js</span>
       </div>
     </div>
   </div>
