@@ -6433,8 +6433,6 @@ canvas {
     color: whitesmoke;
     text-align: center;
     margin-bottom: 1.5rem; }
-  .home-title .button:not(:last-child) {
-    margin-right: 1.5rem; }
   @media screen and (max-width: 768px) {
     .home-title {
       padding: none;
