@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Olzhas Arystanov - projects - Marco Eco Discounter</title>
+    <link rel="stylesheet" href="/theme/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-51154533-7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-51154533-7');
+    </script>
+  </head>
+  <body>
+
+
+<nav class="navbar is-dark">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+	<strong>
+	  Olzhas Arystanov
+	</strong>
+      </a>
+      <span class="navbar-burger burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+	<span></span>
+	<span></span>
+	<span></span>
+      </span>
+    </div>
+    <div id="navMenu" class="navbar-menu">
+      <div class="navbar-end">
+	<a class="navbar-item" href="/projects">Portfolio</a>
+	<a class="navbar-item" href="/contacts">Contacts</a>
+	<span class="navbar-item">
+	  <a class="button" href="https://github.com/olzhasar" target="_blank">
+	    <span class="icon">
+	      <i class="fab fa-github"></i>
+	    </span>
+	    <span>Check my GitHub</span>
+	  </a>
+	</span>
+      </div>
+    </div>
+  </div>
+</nav>
+<section class="hero is-info is-small category-hero">
+
+  <div class="hero-body">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="breadcrumbs">
+	<ul>
+	  <li><a href="/">Home</a></li>
+<li><a href="/projects" aria-current="page">Projects</a></li>
+<li class="is-active"><a href="#" aria-current="page">Marco Eco Discounter</a></li>
+	</ul>
+      </nav>   
+      <h1 class="title">
+Marco Eco Discounter
+      </h1>
+    </div>
+  </div>
+
+</section>
+
+<section class="section">
+  <div class="container">
+<div class="columns is-variable is-6">
+  <div class="column is-7">
+    <div class="content">
+      <h2>E-commerce grocery store</h2>
+      <p>This project was developed as part of a physical grocery store chain's strategy to go online. Online store successfully served hundreds of customers since it's commercial launch and offers 30K+ different products.</p>
+<p><img alt="Home page" src="/projects/img/marco-home.png"></p>
+<p>Online store was built on top of Saleor e-commerce platform which is based on Django.
+Lots of customizations has been made to initial platform in order to meet customer's specific business needs:</p>
+<ul>
+<li>Ability to rate and review products. Dashboard interface for moderating product reviews</li>
+<li>Designed custom order workflow. Customer and manager notifications on each step</li>
+<li>Scheduled ETL cronjob for synchronising products stock and prices with customer's ERP system (powered by Celery). Displaying results in dashboard</li>
+<li>Account registration verification using OTP. Integration with SMS gateway</li>
+<li>Custom middleware for showing age-restricted products only to adult customers</li>
+<li>Added support for business customers</li>
+<li>Integration with MailChimp for subscription to email lists</li>
+<li>Built-in product and variant models has been extended to support customer's SKU and Barcode data in ERP</li>
+<li>Custom dashboard interfaces to support translation of all models to 3 languages: English, Kazakh, Russian</li>
+</ul>
+<p><em>Checkout:</em>
+<img alt="Checkout" src="/projects/img/marco-checkout.png"></p>
+<p><em>Dashboard:</em>
+<img alt="Dashboard" src="/projects/img/marco-dashboard.png"></p>
+    </div>
+  </div>
+  <div class="column is-5">
+    <div class="columns is-multiline">
+      <div class="column is-4">
+	<strong>Contribution:</strong>
+      </div>
+      <div class="column is-8">
+	Sole backend developer
+      </div>
+      <div class="column is-4">
+	<strong>Year:</strong>
+      </div>
+      <div class="column is-8">
+	2019
+      </div>
+      <div class="column is-4">
+	<strong>URL:</strong>
+      </div>
+      <div class="column is-8">
+	  <a href="https://marco.kz/" target="_blank">https://marco.kz/</a>
+      </div>
+      <div class="column is-4">
+	<strong>Technologies:</strong>
+      </div>
+      <div class="column is-8">
+	<span class="tag is-dark">django</span>
+	<span class="tag is-dark">saleor</span>
+	<span class="tag is-dark">postgresql</span>
+	<span class="tag is-dark">celery</span>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+</section>
+
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+
+	// Get all "navbar-burger" elements
+	const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+	// Check if there are any navbar burgers
+	if ($navbarBurgers.length > 0) {
+
+	  // Add a click event on each of them
+	  $navbarBurgers.forEach( el => {
+	    el.addEventListener('click', () => {
+
+	      // Get the target from the "data-target" attribute
+	      const target = el.dataset.target;
+	      const $target = document.getElementById(target);
+
+	      // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+	      el.classList.toggle('is-active');
+	      $target.classList.toggle('is-active');
+
+	    });
+	  });
+	}
+
+      });
+    </script>
+    <script>
+
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Olzhas Arystanov - postgresql tag</title>
+    <link rel="stylesheet" href="/theme/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-51154533-7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-51154533-7');
+    </script>
+  </head>
+  <body>
+
+<div id="particles-js"></div>
+
+<div class="home-title">
+  <h1 class="title">Hello, I'm Olzhas Arystanov</h1>
+  <p>I'm a software engineer and quantitative analyst</p>
+  <div class="buttons is-centered">
+    <a class="button is-large is-warning" href="/projects">
+      <span>View my projects</span>
+    </a>
+    <a class="button is-large is-dark is-outlined" href="https://github.com/olzhasar" target="_blank">
+      <span class="icon">
+        <i class="fab fa-github"></i>
+      </span>
+      <span>Visit my GitHub</span>
+    </a>
+  </div>
+</div>
+
+<script src="/theme/js/particles.min.js"></script>
+<script type="text/javascript">
+  particlesJS.load('particles-js', '/theme/assets/particles.json', function() {
+    console.log('callback - particles.js config loaded');
+  });
+</script>
+
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+
+	// Get all "navbar-burger" elements
+	const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+	// Check if there are any navbar burgers
+	if ($navbarBurgers.length > 0) {
+
+	  // Add a click event on each of them
+	  $navbarBurgers.forEach( el => {
+	    el.addEventListener('click', () => {
+
+	      // Get the target from the "data-target" attribute
+	      const target = el.dataset.target;
+	      const $target = document.getElementById(target);
+
+	      // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+	      el.classList.toggle('is-active');
+	      $target.classList.toggle('is-active');
+
+	    });
+	  });
+	}
+
+      });
+    </script>
+    <script>
+
+
+    </script>
+  </body>
+</html>
