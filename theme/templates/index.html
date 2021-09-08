@@ -1,31 +1,10 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
-{% block body %}
-<div id="particles-js"></div>
-
-<div class="home-title">
-  <h1 class="title">Hello, I'm Olzhas Arystanov</h1>
-  <p>I'm a software engineer and quantitative analyst</p>
-  <div class="buttons is-centered">
-    <a class="button is-large is-warning" href="{{ SITE_URL }}/projects">
-      <span>View my projects</span>
-    </a>
-    <a class="button is-large is-dark is-outlined" href="https://github.com/olzhasar" target="_blank">
-      <span class="icon">
-        <i class="fab fa-github"></i>
-      </span>
-      <span>Visit my GitHub</span>
-    </a>
-  </div>
-</div>
-{% endblock %}
-
-{% block script %}
-<script src="{{ SITE_URL }}/theme/js/particles.min.js"></script>
-<script type="text/javascript">
-  particlesJS.load('particles-js', '{{ SITE_URL }}/theme/assets/particles.json', function() {
-    console.log('callback - particles.js config loaded');
-  });
-</script>
-
+{% block content %}
+  {% for article in articles %}
+    <article class="prose lg:prose-xl mx-auto">
+      <h2>{{ article.title }}</h2>
+      {{ article.excerpt }}
+    </article>
+  {% endfor %}
 {% endblock %}

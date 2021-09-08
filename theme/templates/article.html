@@ -1,70 +1,12 @@
-{% extends 'layout.html' %}
+{% extends 'base.html' %}
 
-{% block title %}{{ SITENAME }} - {{ category }} - {{ article.title }}{% endblock %}
-
-{% block breadcrumb_items %}
-<li><a href="{{ SITE_URL}}/{{ category.url }}" aria-current="page">Projects</a></li>
-<li class="is-active"><a href="#" aria-current="page">{{ article.title }}</a></li>
-{% endblock %}
-
-{% block h1 %}
-{{ article.title }}
-{% endblock %}
+{% block title %}{{ article.title }} - {{ SITENAME }}{% endblock %}
 
 {% block content %}
-<div class="columns is-variable is-6">
-  <div class="column is-7">
-    <div class="content">
-      <h2>{{ article.summary|striptags }}</h2>
-      {{ article.content }}
-    </div>
-  </div>
-  <div class="column is-5">
-    <div class="columns is-multiline">
-      {% if article.contribution %}
-      <div class="column is-4">
-	<strong>Contribution:</strong>
-      </div>
-      <div class="column is-8">
-	{{ article.contribution }}
-      </div>
-      {% endif %}
-      <div class="column is-4">
-	<strong>Year:</strong>
-      </div>
-      <div class="column is-8">
-	{{ article.date.strftime("%Y") }}
-      </div>
-      {% if article.link %}
-      <div class="column is-4">
-	<strong>URL:</strong>
-      </div>
-      <div class="column is-8">
-	  <a href="{{ article.link }}" target="_blank">{{ article.link }}</a>
-      </div>
-      {% endif %}
-      {% if article.github %}
-      <div class="column is-4">
-	<strong>Source code:</strong>
-      </div>
-      <div class="column is-8">
-	<a class="button is-outlined" href="{{ article.github }}" target="_blank">
-	    <span class="icon">
-	      <i class="fab fa-github"></i>
-	    </span>
-	    <span>GtiHub</span>
-	  </a>
-      </div>
-      {% endif %}
-      <div class="column is-4">
-	<strong>Technologies:</strong>
-      </div>
-      <div class="column is-8">
-	{% for tag in article.tags %}
-	<span class="tag is-dark">{{ tag.name }}</span>
-	{% endfor %}
-      </div>
-    </div>
-  </div>
-</div>
+  <article class="prose lg:prose-xl mx-auto">
+    <h1>
+      {{ article.title }}
+    </h1>
+    {{ article.content }}
+  </article>
 {% endblock %}

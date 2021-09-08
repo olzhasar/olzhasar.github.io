@@ -1,35 +1,12 @@
-{% extends 'layout.html' %}
+{% extends 'base.html' %}
 
 {% block title %}{{ SITENAME }} - {{ category }}{% endblock %}
 
-{% block breadcrumb_items %}
-<li class="is-active"><a href="#" aria-current="page">Projects</a></li>
-{% endblock %}
-
-{% block h1 %}
-{% if category == 'projects' %}
-Portfolio
-{% endif %}
-{% endblock %}
-
 {% block content %}
-<div class="columns is-multiline">
   {% for article in articles %}
-  <div class="column is-half">
-    <div class="project-card">
-      <a href="{{ article.url }}">
-	<figure class="image is-16by9 box">
-	  <img src="{{ article.cover }}">
-	</figure>
-      </a>
-      <a href="{{ article.url }}">{{ article.title }}</a>
-      <p>
-	{% for tag in article.tags %}
-	<span class="tag is-dark">{{ tag.name }}</span>
-	{% endfor %}
-      </p>
-    </div>
-  </div>
+    <article class="prose lg:prose-xl mx-auto">
+      <h2 class="mb-8">{{ article.title }}</h2>
+      {{ article.excerpt }}
+    </article>
   {% endfor %}
-</div>
 {% endblock %}

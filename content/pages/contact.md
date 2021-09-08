@@ -1,5 +1,5 @@
-Title: Contacts
-Slug: contacts
+Title: Contact
+Slug: contact
 
 <div class="columns">
   <div class="column is-6">
