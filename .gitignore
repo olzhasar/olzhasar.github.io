@@ -1,4 +1,6 @@
 __pycache__/
 *.pid
 *.pyc
+.venv
 node_modules/
+/theme/static

@@ -9,13 +9,17 @@ AUTHOR = 'Olzhas Arystanov'
 SITENAME = 'Olzhas Arystanov'
 SITEURL = ''
 
-PATH = 'content'
-STATIC_PATHS = ['projects']
+PATH = os.path.join(BASE_DIR, 'content')
+PAGE_PATHS = ['pages', 'projects']
+ARTICLE_PATHS = ['articles']
 
 THEME = os.path.join(BASE_DIR, 'theme')
 
 CATEGORY_URL = '{slug}'
 CATEGORY_SAVE_AS = '{slug}.html'
+
+USE_FOLDER_AS_CATEGORY = True
+DEFAULT_CATEGORY = 'misc'
 
 ARTICLE_URL = '{category}/{slug}'
 ARTICLE_SAVE_AS = '{category}/{slug}.html'
@@ -34,16 +38,6 @@ CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
-
-# Blogroll
-LINKS = (('Pelican', 'http://getpelican.com/'),
-         ('Python.org', 'http://python.org/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'),
-         ('You can modify those links in your config file', '#'),)
-
-# Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
 
 DEFAULT_PAGINATION = 10
 

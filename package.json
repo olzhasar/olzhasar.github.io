@@ -1,25 +1,22 @@
 {
-  "name": "github-pages",
+  "name": "olzhasar.github.io-src",
   "version": "1.0.0",
-  "description": "",
-  "main": "sass/style.scss",
+  "main": "index.js",
+  "repository": "git@github.com:olzhasar/olzhasar.github.io-src",
+  "author": "olzhasar <o.arystanov@gmail.com>",
+  "license": "MIT",
   "scripts": {
-    "css-build": "node-sass --omit-source-map-url sass/style.scss theme/static/css/style.css",
-    "css-watch": "npm run css-build -- --watch",
-    "start": "npm run css-watch"
+    "build": "yarn run postcss ./src/styles.css -o ./theme/static/css/styles.css",
+    "build:prod": "NODE_ENV=production yarn run postcss ./src/styles.css -o ./theme/static/css/styles.css"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/olzhasar/olzhasar.github.io-src.git"
+  "dependencies": {
+    "@tailwindcss/typography": "^0.4.1",
+    "tailwindcss": "^2.2.11"
   },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/olzhasar/olzhasar.github.io-src/issues"
-  },
-  "homepage": "https://github.com/olzhasar/olzhasar.github.io-src#readme",
   "devDependencies": {
-    "bulma": "^0.7.5",
-    "node-sass": "^4.12.0"
+    "autoprefixer": "^10.3.4",
+    "postcss": "^8.3.6",
+    "postcss-cli": "^8.3.1",
+    "postcss-import": "^14.0.2"
   }
 }

@@ -1,57 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="author" content="Olzhas Arystanov" />
+    <meta name="description" content="description here" />
     <title>{% block title %}Olzhas Arystanov{% endblock %}</title>
-    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-51154533-7"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
+    <link rel="stylesheet" href="./theme/css/styles.css">
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-51154533-7"></script> -->
+    <!-- <script> -->
+    <!--   window.dataLayer = window.dataLayer || []; -->
+<!-- function gtag(){dataLayer.push(arguments);} -->
+<!-- gtag('js', new Date()); -->
 
-gtag('config', 'UA-51154533-7');
-    </script>
+<!-- gtag('config', 'UA-51154533-7'); -->
+    <!-- </script> -->
   </head>
-  <body>
+  <body class="bg-gray-100 font-sans leading-normal tracking-normal">
+    {% include "partials/navbar.html" %}
 
-    {% block body %}
+    {% block content %}
     {% endblock %}
+
+    {% include "partials/footer.html" %}
 
     {% block script %}
     {% endblock %}
-
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-
-	// Get all "navbar-burger" elements
-	const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-
-	// Check if there are any navbar burgers
-	if ($navbarBurgers.length > 0) {
-
-	  // Add a click event on each of them
-	  $navbarBurgers.forEach( el => {
-	    el.addEventListener('click', () => {
-
-	      // Get the target from the "data-target" attribute
-	      const target = el.dataset.target;
-	      const $target = document.getElementById(target);
-
-	      // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-	      el.classList.toggle('is-active');
-	      $target.classList.toggle('is-active');
-
-	    });
-	  });
-	}
-
-      });
-    </script>
-    <script>
-
-
-    </script>
   </body>
 </html>
