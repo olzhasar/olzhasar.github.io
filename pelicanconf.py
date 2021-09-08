@@ -29,6 +29,7 @@ PAGE_URL = '{slug}'
 PAGE_SAVE_AS = '{slug}.html'
 
 TIMEZONE = 'Asia/Almaty'
+DEFAULT_DATE_FORMAT = "%b %d %Y"
 
 DEFAULT_LANG = 'en'
 

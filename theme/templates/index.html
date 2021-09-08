@@ -1,10 +1,27 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
+
+{% block title_outer %}Olzhas Arystanov - Software Engineering Blog{% endblock %}
 
 {% block content %}
-  {% for article in articles %}
-    <article class="prose lg:prose-xl mx-auto">
-      <h2>{{ article.title }}</h2>
-      {{ article.excerpt }}
-    </article>
-  {% endfor %}
+  <div class="flex flex-col gap-16">
+    {% for article in articles %}
+      <div class="md:max-w-3xl mx-auto text-gray-900">
+	<div class="mb-4">
+	  <a href="{{ article.url }}">
+	    <h2 class="text-4xl font-bold">{{ article.title }}</h2>
+	  </a>
+	</div>
+	<div class="text-gray-500 mb-4">
+	  {{ article.locale_date }}
+	</div>
+	<a href="{{ article.url }}">
+	  <img class="mb-4" src="https://images.unsplash.com/photo-1454165205744-3b78555e5572?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80" alt="">
+	</a>
+	<div class="text-xl mb-8">
+	  {{ article.summary }}
+	</div>
+	<a href="{{ article.url }}" class="text-md font-bold hover:underline">Read more...</a>
+      </div>
+    {% endfor %}
+  </div>
 {% endblock %}

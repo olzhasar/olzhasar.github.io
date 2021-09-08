@@ -5,22 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="author" content="Olzhas Arystanov" />
-    <meta name="description" content="description here" />
-    <title>{% block title %}Olzhas Arystanov{% endblock %}</title>
+    <meta name="description" content="{% block meta_description %}{% endblock %}" />
+    <title>{% block title_outer %}{% block title %} - Olzhas Arystanov{% endblock %}{% endblock %}</title>
     <link rel="stylesheet" href="/theme/css/styles.css">
-    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-51154533-7"></script> -->
-    <!-- <script> -->
-    <!--   window.dataLayer = window.dataLayer || []; -->
-<!-- function gtag(){dataLayer.push(arguments);} -->
-<!-- gtag('js', new Date()); -->
 
-<!-- gtag('config', 'UA-51154533-7'); -->
-    <!-- </script> -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-51154533-7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-51154533-7');
+    </script>
+
   </head>
-  <body class="bg-gray-100 font-sans leading-normal tracking-normal">
+  <body class="bg-gray-50 font-sans leading-normal tracking-normal">
     {% include "partials/navbar.html" %}
 
-    <div class="container mx-auto px-4 md:px-0 py-8">
+    <div class="container mx-auto px-4 md:px-0 py-8 lg:py-16">
       {% block content %}
       {% endblock %}
     </div>

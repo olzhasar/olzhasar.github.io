@@ -1,4 +1,3 @@
-const colors = require("tailwindcss/colors");
 const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
@@ -7,15 +6,6 @@ module.exports = {
   },
   darkMode: false, // or 'media' or 'class'
   theme: {
-    colors: {
-      gray: colors.blueGray,
-      yellow: colors.amber,
-      green: colors.teal,
-      red: colors.red,
-      blue: colors.blue,
-      black: colors.black,
-      white: colors.white,
-    },
     fontFamily: {
       sans: ["Open Sans", ...defaultTheme.fontFamily.sans],
       serif: [...defaultTheme.fontFamily.serif],
@@ -26,7 +16,5 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-  ],
+  plugins: [require("@tailwindcss/typography")],
 };
