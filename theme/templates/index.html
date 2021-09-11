@@ -5,22 +5,22 @@
 {% block content %}
   <div class="flex flex-col gap-16">
     {% for article in articles %}
-      <div class="md:max-w-3xl mx-auto text-gray-900">
+      <div class="mx-auto text-gray-900 md:max-w-3xl">
 	<div class="mb-4">
 	  <a href="{{ article.url }}">
 	    <h2 class="text-4xl font-bold">{{ article.title }}</h2>
 	  </a>
 	</div>
-	<div class="text-gray-500 mb-4">
+	<div class="mb-4 text-gray-500">
 	  {{ article.locale_date }}
 	</div>
 	<a href="{{ article.url }}">
 	  <img class="mb-4" src="/theme/img/{{ article.image }}" alt="">
 	</a>
-	<div class="text-xl mb-8">
+	<div class="mb-8 text-xl">
 	  {{ article.summary }}
 	</div>
-	<a href="{{ article.url }}" class="text-md font-bold hover:underline">Read more...</a>
+	<a href="{{ article.url }}" class="font-bold text-md hover:underline">Read more...</a>
       </div>
     {% endfor %}
   </div>
