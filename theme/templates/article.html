@@ -3,7 +3,8 @@
 {% block title %}{{ article.title }} - {{ SITENAME }}{% endblock %}
 
 {% block content %}
-  <article class="mx-auto prose lg:prose-xl">
+  <article class="max-w-3xl mx-auto prose lg:prose-xl">
+
     <div class="text-gray-400">
       {{ article.date.strftime("%b %d %Y") }}
     </div>
@@ -11,5 +12,6 @@
       {{ article.title }}
     </h1>
     {{ article.content }}
+
   </article>
 {% endblock %}
