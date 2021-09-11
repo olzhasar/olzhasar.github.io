@@ -72,6 +72,7 @@ else
 endif
 
 publish:
+	rm -rf $(OUTPUTDIR)
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
 
 github: publish
