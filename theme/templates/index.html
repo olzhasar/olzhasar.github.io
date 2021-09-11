@@ -14,9 +14,11 @@
 	<div class="mb-4 text-gray-500">
 	  {{ article.locale_date }}
 	</div>
+	{% if article.image %}
 	<a href="{{ article.url }}">
 	  <img class="mb-4" src="/theme/img/{{ article.image }}" alt="">
 	</a>
+	{% endif %}
 	<div class="mb-8 text-xl">
 	  {{ article.summary }}
 	</div>
