@@ -40,8 +40,6 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
-STATIC_PATH = os.path.join(BASE_DIR, 'theme', 'static')
-
 STATIC_PATHS = [
     'extra',
 ]
@@ -49,8 +47,8 @@ STATIC_PATHS = [
 EXTRA_PATH_METADATA = {
     'extra/favicon.ico': {'path': 'favicon.ico'},
     'extra/apple-touch-icon.png': {'path': 'apple-touch-icon.ico'},
-    'extra/android-chrome-192x192.png': {'path': 'static/extra/android-chrome-192x192.png'},
-    'extra/android-chrome-512x512.png': {'path': 'static/extra/android-chrome-512x512.png'},
+    'extra/android-chrome-192x192.png': {'path': 'android-chrome-192x192.png'},
+    'extra/android-chrome-512x512.png': {'path': 'android-chrome-512x512.png'},
 }
 
 DEFAULT_PAGINATION = 10
