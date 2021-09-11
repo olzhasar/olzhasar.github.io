@@ -40,6 +40,19 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
+STATIC_PATH = os.path.join(BASE_DIR, 'theme', 'static')
+
+STATIC_PATHS = [
+    'extra',
+]
+
+EXTRA_PATH_METADATA = {
+    'extra/favicon.ico': {'path': 'favicon.ico'},
+    'extra/apple-touch-icon.png': {'path': 'apple-touch-icon.ico'},
+    'extra/android-chrome-192x192.png': {'path': 'static/extra/android-chrome-192x192.png'},
+    'extra/android-chrome-512x512.png': {'path': 'static/extra/android-chrome-512x512.png'},
+}
+
 DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
