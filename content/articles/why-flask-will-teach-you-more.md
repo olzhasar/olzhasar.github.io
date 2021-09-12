@@ -45,7 +45,7 @@ session.delete(user)
 session.commit()
 ```
 
-Django allows you to call obj.delete() method directly on the model instance because that instance is mapped to a specific row in the database. SQLAlchemy expects you to use session for making final queries. The later approach can actually be safer in many situations because you always instruct the database explicitly whether to perform a particular query or not. To illustrate this point, consider the following example in Django:
+Django allows you to call obj.delete() method directly on the model instance because that instance is mapped to a specific row in the database. SQLAlchemy expects you to use session for making final queries. The latter approach can actually be safer in many situations because you always instruct the database explicitly whether to perform a particular query or not. To illustrate this point, consider the following example in Django:
 
 ```
 users = user.objects.all()
