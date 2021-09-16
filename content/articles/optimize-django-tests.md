@@ -2,29 +2,29 @@ Title: Optimizing tests execution time of your Django app
 Slug: optimizing-tests-execution-time-of-your-django-app
 Date: 2021-09-16
 Tags: python, django, pytest
-Summary: A couple of ideas that can make your test suite run faster
+Summary: Some ideas to make your test suite run faster
 Status: published
 
-If you are working on a large Django project, you probably have lots of automated tests running as part of your CI/CD process. As long as tests run fast, everything is good. But as your codebase continue to grow, you are adding more and more of them which can result in degraded performance and slower iterations. In this post, I will share some ideas that can optimize runtime of your test suite. I assume you use `pytest` to run your tests, but almost all topics can be 
+If you are working on a large Django project, you probably have lots of automated tests running as part of your CI/CD process. As long as tests run fast, everybody is happy. But as you continue to add more features, your tests start to take more and more time to run and can become a real bottleneck. In this post, I will share some ideas that can help you optimize runtime of your test suite. I assume you are using **pytest**, but recommendations described in this post should be easily applicable to other runners as well.
 
-## Use `sqlite3` database engine if you can
+## Use sqlite3 database engine if you can
 
-If your data layer is relatively simple and does not rely on any database vendor-specific fields or indexes, using `sqlite3` as a database engine in your tests can significantly speed up running time. Django uses **in-memory** variant of sqlite database during tests which will avoid any disk IO altogether and make your database tests blazing fast.
+If your data layer is simple enough and does not rely on any database vendor-specific fields or indexes, using **sqlite3** as a database engine in your tests can be the easiest way to speed things up. Django uses **in-memory** variant of sqlite database during tests which will avoid any disk IO altogether and make working with database in your tests blazing fast.
 
-Despite outstanding speed improvements, this approach is still less safe than using the same db engine in your test and prod environment. For that reason it should probably be avoided for large projects with critical functionality.
+Despite outstanding speed improvements, this approach is less safe than using the same db engine in your tests as in your prod environment. There is a little chance of difference in behavior between databases which can potentially lead to uncovered scenarios. For that reason it should probably be avoided for large projects with critical functionality.
 
 ## Optimize migrations
 
-Every time your test suite starts to run, Django will create an empty database and then run all migrations to create tables. This can take long time, especially if there is a latency between your test runner and test database.
+Every time your test suite starts to run, Django will create an empty database and then run all migrations to create necessary schema. This can take long time, especially if there is a latency between your test runner and test database.
 
 ### Create test database directly from models
 
-First possible optimization here is to create a tests database from directly from models without running any migrations. `pytest-django` has a special flag [--no-migrations](https://pytest-django.readthedocs.io/en/latest/database.html#no-migrations-disable-django-migrations) for that. That can be a lot faster if you have lots of migrations in your project
+One possible optimization is to create a test database directly from Django models without running any migrations. `pytest-django` has a special flag [--no-migrations](https://pytest-django.readthedocs.io/en/latest/database.html#no-migrations-disable-django-migrations) for that. This approach will reduce db creation time if you have lots of migrations in your project. The downside is that you will lose data migrations as well, which some projects may need to rely on in their tests.
 
 ### Squash existing migrations
 
-Another solution is to squash your existing migrations. Squashing means reducing quantity of migrations without losing their side effect. You can use Django's built-in [squashmigrations command](https://docs.djangoproject.com/en/dev/topics/migrations/#migration-squashing) for that.
+Another solution is to squash your existing migrations. Django provides a management command called [squashmigrations](https://docs.djangoproject.com/en/dev/topics/migrations/#migration-squashing). You probably should be squashing your migrations periodically not only to speed tests but also to avoid pollution of your codebase.
 
 ### Use a pre-made dump to create your database
 
-Sometimes squashing is hardly an option, e.g. when your migrations rely heavily on `RunPython` and `RunSQL` commands. In that case there is another solution which I used for a project with immense amount of migrations. Tests were running too slow in a CI runner because of the preparation step in which migrations were applied. The idea is to create a script that will periodically take the recent codebase from the stable branch, create a new database by applying all migrations and upload a resulting dump to a place where it can be later downloaded. In order for this method to work, you need to customize how your test database is being created. `pytest-django` has a [special fixture](https://pytest-django.readthedocs.io/en/latest/database.html#django-db-setup) that is responsible for database creation. You can customize this fixture to use a downloaded dump. After that, only new migrations (if any) will be applied which can significantly reduce database preparation time (as it was in my case).
+Sometimes squashing is not an easy option, e.g. when your migrations rely heavily on `RunPython` and `RunSQL` commands. In that case there is another solution which I applied to a project with immense amount of migrations. The idea is to create a cron task that will periodically take the recent codebase from your stable branch, create a new database by applying all migrations and upload a resulting dump to a place where it can be downloaded later by your CI runner. In order for this method to work, you need to customize how your test database is being created. `pytest-django` has [django-db-setup](https://pytest-django.readthedocs.io/en/latest/database.html#django-db-setup) fixture which can be customized to alter database creation process. You need to change it to use a pre-made dump instead of creating database from scratch. After creating the database, only newly added migrations are left to be applied which can save a lot of time.
