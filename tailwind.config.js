@@ -11,7 +11,20 @@ module.exports = {
       serif: [...defaultTheme.fontFamily.serif],
       mono: ["Ubuntu Mono", ...defaultTheme.fontFamily.mono],
     },
-    extend: {},
+    extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            "code::before": {
+              content: '""',
+            },
+            "code::after": {
+              content: '""',
+            },
+          },
+        },
+      },
+    },
   },
   variants: {
     extend: {},
