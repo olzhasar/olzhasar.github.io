@@ -11,7 +11,7 @@ compile_sass = false
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = false
 
-theme = "zola-pickles"
+theme = "anpu"
 
 taxonomies = [
     { name = "categories" },
