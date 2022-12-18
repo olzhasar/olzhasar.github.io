@@ -3,5 +3,5 @@
 	url = https://github.com/zbrox/anpu-zola-theme.git
 
 [submodule "themes/zola-pickles"]
-	path = themes/anpu
+	path = themes/zola-pickles
 	url = https://github.com/lukehsiao/zola-pickles.git
