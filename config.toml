@@ -11,7 +11,7 @@ compile_sass = false
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = false
 
-theme = "anpu"
+theme = "zola-pickles"
 
 taxonomies = [
     { name = "categories" },
@@ -20,8 +20,6 @@ taxonomies = [
 
 [markdown]
 highlight_code = true
-highlight_theme = "kronuz"
-render_emoji = true
 
 [extra]
 anpu_menu_links = [
@@ -30,3 +28,4 @@ anpu_menu_links = [
 ]
 
 anpu_date_format = "%e %B %Y"
+author = "Olzhas Arystanov"
