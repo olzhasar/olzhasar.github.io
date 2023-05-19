@@ -1,0 +1,24 @@
+baseURL: http://olzhasar.github.io/
+languageCode: en-us
+title: Olzhas Arystanov
+
+theme: hugo-flex
+params:
+  summaries: true
+  footer:
+    © Olzhas Arystanov 2021-2023
+
+menu:
+  nav:
+    - name: About me
+      url: about/
+      weight: 1
+    - name: Posts
+      url: /
+      weight: 2
+    - name: Tags
+      url: tags/
+      weight: 3
+    - name: Github
+      url: https://github.com/olzhasar/
+      weight: 4

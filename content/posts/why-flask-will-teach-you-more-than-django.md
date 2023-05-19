@@ -1,10 +1,14 @@
-+++
-title = "Why Flask will teach you more about software engineering than Django"
-date = 2021-09-11
+---
+title: Why Flask will teach you more about software engineering than Django
+date: 2021-09-11
 
-[taxonomies]
-tags = ['flask', 'django']
-+++
+aliases:
+  - /why-flask-will-teach-you-more-than-django/
+
+tags:
+  - flask
+  - django
+---
 
 ## Intro
 
