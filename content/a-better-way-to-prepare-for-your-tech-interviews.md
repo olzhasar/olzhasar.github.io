@@ -18,4 +18,11 @@ Let's say you struggle with backtracking algorithms. You have never implemented 
 
 The first approach is not ideal, especially if you have an ego like myself (I'm working on it). You can spend a lot of hours trying hard, but if you are not familiar with the concepts, those hours will likely be wasted. The second and third approaches are much better. You read or watch the solution, understanding the thought process behind it, and then (hopefully) try to replicate it yourself. However, the problem with this approach is that it's still just a single problem out of the 75 or 150 (or however many problems you plan to solve), and you treat it as such. In my experience, this approach does not allow you to fully understand the concept and build a long-term memory of it.
 
-So, what can we do better to fully grasp the concept? I am a strong advocate of the "learning-by-doing" technique, and I suggest utilizing it here. The idea is to build a small or medium-sized project in your programming language of choice where a certain concept is applied. For example, if we are talking about backtracking algorithms, you can build a fully functional Sudoku game. Working on a fully-functional project is much more motivating because you can see how the concept is applied to solve a real problem. I believe it's enough to build a single project for each topic you want to master. After that, solving LeetCode problems in that area should become a much easier and productive activity.
+So, what can we do better to fully grasp the concept? I am a strong advocate of the "learning-by-doing" technique, and I suggest utilizing it here. The idea is to build a small or medium-sized project in your programming language of choice where a certain concept is applied. For example, if we are talking about backtracking algorithms, you can build a fully functional Sudoku game.
+
+Why is this approach better?
+
+- You can see how the concept you are exploring can be applied to solve a real problem.
+- Spending a significant amount of time on a single LeetCode problem can be really tedious. In contrast, building a project should give you much more motivation to stay focused. And it's completely okay to spend multiple days or weeks working on it.
+- You are much more likely to return to your project later to polish things than returning to your solved LeetCode problems.
+- It should be enough to build a single project for each topic to gain an understanding. After that, you can return to solving LeetCode problems in that topic, and it should be much easier and more fun now.
