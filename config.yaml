@@ -10,7 +10,7 @@ params:
 
 menu:
   nav:
-    - name: About me
+    - name: About
       url: about/
       weight: 1
     - name: Posts
