@@ -1,8 +1,8 @@
-+++
-title = "Setting up Neovim for Python development"
-date = 2021-09-08
-draft = true
-+++
+---
+title: "Setting up Neovim for Python development"
+date: 2021-09-08
+draft: true
+---
 
 If you happen to be a Vim fan like myself, I don't need to explain to you how incredible this editor is. But when it comes to developing large projects, can Neovim really compete with all these fancy fully featured IDEs like PyCharm or VSCode? The answer is a strong YES, but we need to make a little a bit of a setup for that. In this article, I will show you some tools that I use on a daily basis with Neovim for developing large software in Python (and other languages as well).
 
