@@ -23,3 +23,7 @@ Leetcode does all the parsing for you and passes the prepared input to your Solu
 ### Feels like a real project
 
 I always hate the short-term nature of solving Leetcode problems. It makes me feel like I'm wasting my precious time sometimes. Here, in contrast, I feel like I'm working on a set of side projects. As a result, I care about the code quality much more.
+
+### Conclusion
+
+If you haven't yet tried the Advent of Code, I suggest you give it a shot. It's a great way to sharpen your problem solving skills and/or learn new programming language.
