@@ -19,6 +19,9 @@ menu:
     - name: Tags
       url: tags/
       weight: 3
+    - name: Projects
+      url: projects/
+      weight: 3
     - name: Github
       url: https://github.com/olzhasar/
       weight: 4
