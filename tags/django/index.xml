@@ -1,4 +1,92 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="http://olzhasar.github.io/xml/base.min.xml"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>django on Olzhas Arystanov</title><link>http://olzhasar.github.io/tags/django/</link><description>Recent content in django on Olzhas Arystanov</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 16 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://olzhasar.github.io/tags/django/index.xml" rel="self" type="application/rss+xml"/><item><title>Advent of Code vs LeetCode</title><link>http://olzhasar.github.io/posts/advent-of-code-vs-leetcode/</link><pubDate>Sat, 20 May 2023 00:00:00 +0000</pubDate><guid>http://olzhasar.github.io/posts/advent-of-code-vs-leetcode/</guid><description>&lt;p>I recently discovered the &lt;a href="https://adventofcode.com/">Advent of Code&lt;/a> project for myself and I absolutely loved it. At first, it seemed similar to solving Leetcode problems. However, after trying it for a few days now I realized that I like the experience much more. In this short blog post I&amp;rsquo;ll try to break down main advantages that I see over Leetcode:&lt;/p>
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="http://olzhasar.github.io/xml/base.min.xml"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>django on Olzhas Arystanov</title><link>http://olzhasar.github.io/tags/django/</link><description>Recent content in django on Olzhas Arystanov</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 16 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://olzhasar.github.io/tags/django/index.xml" rel="self" type="application/rss+xml"/><item><title>Unlocking the power of asyncio Semaphore</title><link>http://olzhasar.github.io/posts/unlocking-the-power-of-asyncio-semaphore/</link><pubDate>Wed, 31 May 2023 10:10:15 +0600</pubDate><guid>http://olzhasar.github.io/posts/unlocking-the-power-of-asyncio-semaphore/</guid><description>&lt;p>When building asynchronous applications, oftentimes you need to limit the number of simultaneous connections to a shared resource. It can be your internal server, or an API that has usage limits.&lt;/p>
+&lt;p>&lt;code>asyncio&lt;/code> library provides a dedicated synchronization primitive &lt;code>Semaphore&lt;/code> created exactly for this purpose. However, let&amp;rsquo;s first try to solve this problem without using it, in order to fully appreciate what the value of this mechanism.&lt;/p>
+&lt;p>We can limit the number of simultaneous connections by using a &lt;code>counter&lt;/code> variable that will be incremented whenever we start making a request and decremented when we receive our response. Let&amp;rsquo;s look at the example code:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> asyncio
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> aiohttp
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>URL &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;https://google.com/&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>connections &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>connections_limit &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">3&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">async&lt;/span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">make_request&lt;/span>(session: aiohttp&lt;span style="color:#f92672">.&lt;/span>ClientSession, i: int):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">global&lt;/span> connections
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">while&lt;/span> connections &lt;span style="color:#f92672">&amp;gt;=&lt;/span> connections_limit:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">await&lt;/span> asyncio&lt;span style="color:#f92672">.&lt;/span>sleep(&lt;span style="color:#ae81ff">0.1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> connections &lt;span style="color:#f92672">+=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">async&lt;/span> &lt;span style="color:#66d9ef">with&lt;/span> session&lt;span style="color:#f92672">.&lt;/span>get(URL) &lt;span style="color:#66d9ef">as&lt;/span> response:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">await&lt;/span> response&lt;span style="color:#f92672">.&lt;/span>text()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> connections &lt;span style="color:#f92672">-=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">async&lt;/span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">async&lt;/span> &lt;span style="color:#66d9ef">with&lt;/span> aiohttp&lt;span style="color:#f92672">.&lt;/span>ClientSession() &lt;span style="color:#66d9ef">as&lt;/span> session:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">await&lt;/span> asyncio&lt;span style="color:#f92672">.&lt;/span>gather(&lt;span style="color:#f92672">*&lt;/span>(make_request(session, i &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>) &lt;span style="color:#66d9ef">for&lt;/span> i &lt;span style="color:#f92672">in&lt;/span> range(&lt;span style="color:#ae81ff">10&lt;/span>)))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>asyncio&lt;span style="color:#f92672">.&lt;/span>run(main())&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;p>You may have guessed that this code has a problem - it allows possible race conditions when multiple coroutines try to concurrently mutate our &lt;code>connections&lt;/code> variable. This can lead to inaccurate connections counting. We can fix that by introducing a &lt;a href="https://docs.python.org/3/library/asyncio-sync.html#lock">&lt;code>Lock&lt;/code>&lt;/a>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> asyncio
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> aiohttp
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>URL &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;https://google.com/&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>connections &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>connections_limit &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">3&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>connections_lock &lt;span style="color:#f92672">=&lt;/span> asyncio&lt;span style="color:#f92672">.&lt;/span>Lock()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">async&lt;/span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">make_request&lt;/span>(session: aiohttp&lt;span style="color:#f92672">.&lt;/span>ClientSession, i: int):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">global&lt;/span> connections
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">while&lt;/span> connections &lt;span style="color:#f92672">&amp;gt;=&lt;/span> connections_limit:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">await&lt;/span> asyncio&lt;span style="color:#f92672">.&lt;/span>sleep(&lt;span style="color:#ae81ff">0.1&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">async&lt;/span> &lt;span style="color:#66d9ef">with&lt;/span> connections_lock:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> connections &lt;span style="color:#f92672">+=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">async&lt;/span> &lt;span style="color:#66d9ef">with&lt;/span> session&lt;span style="color:#f92672">.&lt;/span>get(URL) &lt;span style="color:#66d9ef">as&lt;/span> response:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">await&lt;/span> response&lt;span style="color:#f92672">.&lt;/span>text()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">async&lt;/span> &lt;span style="color:#66d9ef">with&lt;/span> connections_lock:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> connections &lt;span style="color:#f92672">-=&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">async&lt;/span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">async&lt;/span> &lt;span style="color:#66d9ef">with&lt;/span> aiohttp&lt;span style="color:#f92672">.&lt;/span>ClientSession() &lt;span style="color:#66d9ef">as&lt;/span> session:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">await&lt;/span> asyncio&lt;span style="color:#f92672">.&lt;/span>gather(&lt;span style="color:#f92672">*&lt;/span>(make_request(session, i &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>) &lt;span style="color:#66d9ef">for&lt;/span> i &lt;span style="color:#f92672">in&lt;/span> range(&lt;span style="color:#ae81ff">10&lt;/span>)))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>asyncio&lt;span style="color:#f92672">.&lt;/span>run(main())&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;p>Now the &lt;code>connections_lock&lt;/code> ensures that only a single coroutine can mutate our &lt;code>connections&lt;/code> variable at any moment in time. Even though this example now works, the code can be simplified significantly by using the above mentioned &lt;a href="https://docs.python.org/3/library/asyncio-sync.html#asyncio.Semaphore">&lt;code>Semaphore&lt;/code>&lt;/a> primitive:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> asyncio
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> aiohttp
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>URL &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;https://google.com/&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>connections &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sem &lt;span style="color:#f92672">=&lt;/span> asyncio&lt;span style="color:#f92672">.&lt;/span>Semaphore(&lt;span style="color:#ae81ff">3&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">async&lt;/span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">make_request&lt;/span>(session: aiohttp&lt;span style="color:#f92672">.&lt;/span>ClientSession, i: int):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">async&lt;/span> &lt;span style="color:#66d9ef">with&lt;/span> sem:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">async&lt;/span> &lt;span style="color:#66d9ef">with&lt;/span> session&lt;span style="color:#f92672">.&lt;/span>get(URL) &lt;span style="color:#66d9ef">as&lt;/span> response:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">await&lt;/span> response&lt;span style="color:#f92672">.&lt;/span>text()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">async&lt;/span> &lt;span style="color:#66d9ef">def&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>():
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">async&lt;/span> &lt;span style="color:#66d9ef">with&lt;/span> aiohttp&lt;span style="color:#f92672">.&lt;/span>ClientSession() &lt;span style="color:#66d9ef">as&lt;/span> session:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">await&lt;/span> asyncio&lt;span style="color:#f92672">.&lt;/span>gather(&lt;span style="color:#f92672">*&lt;/span>(make_request(session, i &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>) &lt;span style="color:#66d9ef">for&lt;/span> i &lt;span style="color:#f92672">in&lt;/span> range(&lt;span style="color:#ae81ff">10&lt;/span>)))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>asyncio&lt;span style="color:#f92672">.&lt;/span>run(main())&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;p>This code does pretty much the same job as the example with the Lock. &lt;code>asyncio.Semaphore&lt;/code> automatically blocks the execution of the coroutine if the number of currently acquired locks that were not released exceeds the specified capacity.&lt;/p></description></item><item><title>Advent of Code vs LeetCode</title><link>http://olzhasar.github.io/posts/advent-of-code-vs-leetcode/</link><pubDate>Sat, 20 May 2023 00:00:00 +0000</pubDate><guid>http://olzhasar.github.io/posts/advent-of-code-vs-leetcode/</guid><description>&lt;p>I recently discovered the &lt;a href="https://adventofcode.com/">Advent of Code&lt;/a> project for myself and I absolutely loved it. At first, it seemed similar to solving Leetcode problems. However, after trying it for a few days now I realized that I like the experience much more. In this short blog post I&amp;rsquo;ll try to break down main advantages that I see over Leetcode:&lt;/p>
 &lt;h3 id="no-online-editor">
 &lt;a class="Heading-link u-clickable" href="http://olzhasar.github.io/posts/advent-of-code-vs-leetcode/#no-online-editor">No online editor&lt;/a>
 &lt;/h3>
