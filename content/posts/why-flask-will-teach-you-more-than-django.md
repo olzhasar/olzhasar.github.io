@@ -8,6 +8,7 @@ aliases:
 tags:
   - flask
   - django
+  - python
 ---
 
 ## Intro

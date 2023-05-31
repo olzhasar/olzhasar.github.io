@@ -1,6 +1,10 @@
 ---
 title: "Unlocking the power of asyncio Semaphore"
 date: 2023-05-31T10:10:15+06:00
+
+tags:
+  - asyncio
+  - python
 ---
 
 When building asynchronous applications, oftentimes you need to limit the number of simultaneous connections to a shared resource. It can be your internal server, or an API that has usage limits.
