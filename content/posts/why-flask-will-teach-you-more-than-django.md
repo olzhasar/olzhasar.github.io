@@ -13,11 +13,11 @@ tags:
 
 ## Intro
 
-I started my journey in web development with Django. That was the first framework that I’ve learned right after familiarizing myself with a bit of Python programming language. Pretty soon I was able to write a couple of web applications with it. I was so fascinated by the fact that I can build a full-featured website in a couple of days or sometimes hours depending on project complexity. I remember trying Flask for a couple of pet projects. Sometimes I managed to build something simple with it but as complexity started to grow, I would give up sooner or later. Django was so much easier to work with for me as a beginning software engineer. When I was stuck with something in Django, almost every time there will be a detailed answer on stackoverflow. It wasn't that easy to find with Flask. As a result, I played with Flask here and there but never built anything serious with it.
+I started my journey in back-end development with Django. That was the first framework that I’ve learned right after familiarizing myself with a bit of Python programming language. Pretty soon I was able to write simple web applications with it. I was so fascinated by the fact that I can build a full-featured website in a couple of days or sometimes hours depending on project complexity. I remember trying Flask for a couple of pet projects. Sometimes I managed to build something simple with it but as soon as complexity of the application started to grow, I would give up sooner or later. Django was so much easier to work with for me as a beginning software engineer. When I was stuck with something in Django, almost every time there would be a detailed answer on `stackoverflow`. It was much trickier to find solutions for issues that I faced using Flask. As a result, I played with Flask here and there but never built anything serious with it.
 
 ## Second try
 
-After several years of working with Django both at my job and for personal projects, I finally decided to give Flask another try and dive deep into it. The main motivation for me this time was my desire to learn SQLAlchemy ORM. I was already a middle engineer at that point, knowing something about servers, databases and software design. I started a toy project and surprisingly managed to finish it in a couple of days. Moreover, I totally fell in love with the process of building it. Flask gave me complete freedom over the application design and I utilized that opportunity to create an app that would perfectly suit my every need. I used Flask for almost every personal project since then and I learned a lot while doing them. I thought about my experience with Django and I finally came to a conclusion that choosing Flask at the very beginning of my career would be a much more beneficial decision in the long run.
+After several years of working with Django both at my job and for personal projects, I finally decided to give Flask another try and dive deep into it. The main motivation for me this time was my desire to learn `SQLAlchemy` ORM. I was already a middle engineer at that point, knowing something about servers, databases and software design. I started a toy project and surprisingly managed to finish it in a couple of days. Moreover, I totally fell in love with the process of building it. Flask gave me complete freedom over the application design and I utilized that opportunity to create an app that would perfectly suit my every need. I used Flask for almost every personal project since then and I learned a lot while doing them. I thought about my experience with Django and I finally came to a conclusion that choosing Flask at the beginning of my career would be a much more beneficial decision in the long run.
 
 Let's walk over some points where I think Flask compared to Django can be more enlightening especially to entry-level engineers.
 
@@ -33,9 +33,9 @@ Django is an absolutely beautiful piece of software. There are so many brilliant
 
 Flask, contrastingly, does not force you to do things a certain way. Once again, you have a complete freedom, and you can do pretty much anything you want. That also means that you will probably make bad decisions in the beginning of your journey, but that's where you will learn a lot. If you ever played chess, you probably started as a pretty bad player. But the more bad moves you make and games you lose, the more you analyze your mistakes and correct your strategy, which results in your progress. I believe the same principle applies to software engineering. Nobody learned to produce perfect computer programs right from the start. You absolutely need to make a lot of mistakes and analyze outcomes to truly master your software design skills. And Flask is the perfect tool to make such mistakes and progress as a software engineer.
 
-## SQLAlchemy vs Django ORM
+## `SQLAlchemy` vs Django ORM
 
-Even though Flask is not coupled with any ORM solution out of the box, developers typically choose [SQLAlchemy](https://www.sqlalchemy.org/) to work with relational databases in their Flask applications. Django comes with its own Object-relational mapping tool which is oftentimes called Django ORM. These two ORM solutions follow quite different data access patterns: SQLAlchemy uses [Data mapper pattern](https://en.wikipedia.org/wiki/Data_mapper_pattern) and Django ORM uses [Active Record Pattern](https://en.wikipedia.org/wiki/Active_record_pattern). What it means is that Django maps every python object to a particular row in a database whereas in SQLAlchemy database operations and python objects are separated. Consider the following example of querying and deleting a row in a database:
+Even though Flask is not coupled with any ORM solution out of the box, developers typically choose [`SQLAlchemy`](https://www.sqlalchemy.org/) to work with relational databases in their Flask applications. Django comes with its own Object-relational mapping tool which is oftentimes called Django ORM. These two ORM solutions follow quite different data access patterns: `SQLAlchemy` uses [Data mapper pattern](https://en.wikipedia.org/wiki/Data_mapper_pattern) and Django ORM uses [Active Record Pattern](https://en.wikipedia.org/wiki/Active_record_pattern). What it means is that Django maps every python object to a particular row in a database whereas in `SQLAlchemy` database operations and python objects are separated. Consider the following example of querying and deleting a row in a database:
 
 Django:
 
@@ -44,7 +44,7 @@ user = User.objects.get(id=1)
 user.delete()
 ```
 
-SQLAlchemy:
+`SQLAlchemy`:
 
 ```py3
 user = session.query(User).get(1)
@@ -52,7 +52,7 @@ session.delete(user)
 session.commit()
 ```
 
-Django allows you to call obj.delete() method directly on the model instance because that instance is mapped to a specific row in the database. SQLAlchemy expects you to use session for making final queries. The latter approach can actually be safer in many situations because you always instruct the database explicitly whether to perform a particular query or not. To illustrate this point, consider the following example in Django:
+Django allows you to call obj.delete() method directly on the model instance because that instance is mapped to a specific row in the database. `SQLAlchemy` expects you to use session for making final queries. The latter approach can actually be safer in many situations because you always instruct the database explicitly whether to perform a particular query or not. To illustrate this point, consider the following example in Django:
 
 ```py3
 users = user.objects.all()
@@ -68,10 +68,10 @@ def some_func(users):
         print(user.name)
 ```
 
-We cannot say for sure when the query will actually be performed because we don't know was this queryset of users evaluated earlier or not. This can lead to undesired side effects especially during development of large software projects.
+We cannot say for sure when the query will actually be performed because we don't know was this QuerySet of users evaluated earlier or not. This can lead to undesired side effects especially during development of large software projects.
 
-I've worked with both ORMs in a bunch of projects and my personal opinion is that SQLAlchemy is safer and also makes you think more in terms of actual SQL queries that the database will produce compared to Django. Forming that mindset in my opinion is extremely beneficial for any entry-level backend engineer.
+I've worked with both object-relational mappers in a bunch of projects and my personal opinion is that `SQLAlchemy` is safer and also makes you think more in terms of actual SQL queries that the database will produce compared to Django. Forming that mindset in my opinion is extremely beneficial for any entry-level backend engineer.
 
 ## Summary
 
-In conclusion, Django is undoubtedly a great web framework that will make your life easier especially if you have tight deadlines and want to iterate as quickly as possible. But it comes with a lot of magic hidden inside that prevents developers from understanding the whole picture. If you are not yet a highly experienced engineer and lack some knowledge, I would strongly recommend you to try Flask at least for your side projects. It will probably take more of your working time if you are justing starting out with Flask, but that will be an important investment in your backend development skills. On the other hand, if you are an experienced engineer but want to drop the boundaries and implement your brilliant design decisions in a complete freedom, you will also profit a lot by choosing Flask as your framework.
+In conclusion, Django is undoubtedly a great web framework that will make your life easier especially if you have tight deadlines and want to iterate as quickly as possible. But it comes with a lot of magic hidden inside that prevents developers from understanding the whole picture. If you are not yet a highly experienced engineer and lack some knowledge, I would strongly recommend you to try Flask at least for your side projects. It will probably take more of your working time if you are just starting out with Flask, but that will be an important investment in your backend development skills. On the other hand, if you are an experienced engineer but want to drop the boundaries and implement your brilliant design decisions in a complete freedom, you will also profit a lot by choosing Flask as your framework.
