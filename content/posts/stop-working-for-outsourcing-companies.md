@@ -11,15 +11,15 @@ I've spent about three years in total working at two different outsourcing compa
 
 They always tell that you are going to work on a single project at a time. Until you do not. I believe this is especially true if you are a senior engineer or a team leader. It will be even worse if you are productive, because in the end, your company wants to close more deals and delegating things to the most productive employees is the way to go for them.
 
-Building software at your job and creating a side project in your free time is okay. You can establish clear boundaries and prioritize depending on the situation. You will probably work more on your side project on weekends or holidays and focus on your main job on weekdays. Working on multiple projects at your job at the same time is a different story. Prioritizing becomes much harder. Switching between projects takes much more mental energy than you realize. Especially if are qualified and building serious things.
+Building software at your job and creating a side project in your free time is okay. You can establish clear boundaries and prioritize depending on the situation. You will probably work more on your side project on weekends or holidays and focus on your main job on weekdays. Working on multiple projects at your job at the same time is a different story. Prioritizing becomes much harder. Switching between projects takes much more mental energy than you realize. Especially if are qualified and build complex systems.
 
 ## Software quality
 
-In outsourcing companies, software quality is about avoiding complaints from clients. That's it. If you've built something great, no one cares. If your code is readable and maintainable, your teammates will be grateful, but in the long run, no one will care either.
+Software quality in outsourcing companies is about avoiding complaints from clients. That's it. If you've built something great, no one cares. If your code is readable and maintainable, your teammates will be grateful, but in the long run, no one will care either.
 
 ## WTF is refactoring?
 
-Do you perform regular refactoring in your projects? You will probably lack time for this. Because the feature log is too large, and the last thing that your boss and their clients want to pay you for is a mysterious activity that brings no tangible additional value.
+Do you perform regular refactoring in your projects? You will probably lack time for this working for outsourcing companies. Because the feature log is too large, and the last thing that your boss and their clients want to pay you for is a mysterious activity that brings no tangible additional value.
 
 ## Monotonicity
 
