@@ -19,7 +19,7 @@ Software quality in outsourcing companies is about avoiding complaints from clie
 
 ## WTF is refactoring?
 
-Do you perform regular refactoring in your projects? You will probably lack time for this working for outsourcing companies. Because the feature log is too large, and the last thing that your boss and their clients want to pay you for is a mysterious activity that brings no tangible additional value.
+Do you perform regular refactoring in your projects? You will probably lack time for this working for an outsourcing company. The feature log is always too large, and the last thing that your boss and their clients want to pay you for is a mysterious activity that brings no tangible additional value.
 
 ## Monotonicity
 
