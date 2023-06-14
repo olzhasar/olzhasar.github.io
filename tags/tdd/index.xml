@@ -108,7 +108,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>asyncio&lt;span style="color:#f92672">.&lt;/span>run(main())&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
-&lt;p>This code does pretty much the same job as the example with the Lock. &lt;code>asyncio.Semaphore&lt;/code> automatically blocks the execution of the &lt;code>coroutine&lt;/code> if the number of currently acquired locks that were not released exceeds the specified capacity.&lt;/p></description></item><item><title>Advent of Code vs LeetCode</title><link>http://olzhasar.github.io/posts/advent-of-code-vs-leetcode/</link><pubDate>Sat, 20 May 2023 00:00:00 +0000</pubDate><guid>http://olzhasar.github.io/posts/advent-of-code-vs-leetcode/</guid><description>&lt;p>I recently discovered the &lt;a href="https://adventofcode.com/">Advent of Code&lt;/a> project for myself and I absolutely loved it. At first, it seemed similar to solving &lt;code>Leetcode&lt;/code> problems. However, after trying it for a few days now I realized that I like the experience much more. In this short blog post I&amp;rsquo;ll try to break down main advantages that I see over &lt;code>Leetcode&lt;/code>:&lt;/p>
+&lt;p>This code does pretty much the same job as the example with the Lock. &lt;code>asyncio.Semaphore&lt;/code> automatically blocks the execution of the &lt;code>coroutine&lt;/code> if the number of currently acquired locks that were not released exceeds the specified capacity.&lt;/p></description></item><item><title>Advent of Code vs LeetCode</title><link>http://olzhasar.github.io/posts/advent-of-code-vs-leetcode/</link><pubDate>Sat, 20 May 2023 00:00:00 +0000</pubDate><guid>http://olzhasar.github.io/posts/advent-of-code-vs-leetcode/</guid><description>&lt;p>I recently discovered the &lt;a href="https://adventofcode.com/">Advent of Code&lt;/a> project for myself and I absolutely loved it. At first glance, it seemed similar to solving &lt;code>Leetcode&lt;/code> problems. However, after trying it for a few days now I realized that I like the experience much more. In this short blog post I&amp;rsquo;ll try to break down main advantages that I see over &lt;code>Leetcode&lt;/code>:&lt;/p>
 &lt;h3 id="no-online-editor">
 &lt;a class="Heading-link u-clickable" href="http://olzhasar.github.io/posts/advent-of-code-vs-leetcode/#no-online-editor">No online editor&lt;/a>
 &lt;/h3>
@@ -124,7 +124,7 @@
 &lt;h3 id="feels-like-a-real-project">
 &lt;a class="Heading-link u-clickable" href="http://olzhasar.github.io/posts/advent-of-code-vs-leetcode/#feels-like-a-real-project">Feels like a real project&lt;/a>
 &lt;/h3>
-&lt;p>I always hate the short-term nature of solving &lt;code>Leetcode&lt;/code> problems. It makes me feel like I&amp;rsquo;m wasting my precious time sometimes. Here, in contrast, I feel like I&amp;rsquo;m working on a set of side projects. As a result, I care about the code quality much more.&lt;/p>
+&lt;p>I always hate the short-term nature of solving &lt;code>Leetcode&lt;/code> problems. It makes me feel like I&amp;rsquo;m wasting time and instead of building something. Here, in contrast, I feel like I&amp;rsquo;m working on a set of side projects. As a result, I care about the code quality much more.&lt;/p>
 &lt;h3 id="conclusion">
 &lt;a class="Heading-link u-clickable" href="http://olzhasar.github.io/posts/advent-of-code-vs-leetcode/#conclusion">Conclusion&lt;/a>
 &lt;/h3>
