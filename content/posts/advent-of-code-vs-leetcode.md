@@ -6,7 +6,7 @@ tags:
   - leetcode
 ---
 
-I recently discovered the [Advent of Code](https://adventofcode.com/) project for myself and I absolutely loved it. At first, it seemed similar to solving `Leetcode` problems. However, after trying it for a few days now I realized that I like the experience much more. In this short blog post I'll try to break down main advantages that I see over `Leetcode`:
+I recently discovered the [Advent of Code](https://adventofcode.com/) project for myself and I absolutely loved it. At first glance, it seemed similar to solving `Leetcode` problems. However, after trying it for a few days now I realized that I like the experience much more. In this short blog post I'll try to break down main advantages that I see over `Leetcode`:
 
 ### No online editor
 
@@ -22,7 +22,7 @@ You are not limited at all, you can even use [BrainFuck](https://esolangs.org/wi
 
 ### Feels like a real project
 
-I always hate the short-term nature of solving `Leetcode` problems. It makes me feel like I'm wasting my precious time sometimes. Here, in contrast, I feel like I'm working on a set of side projects. As a result, I care about the code quality much more.
+I always hate the short-term nature of solving `Leetcode` problems. It makes me feel like I'm wasting time and instead of building something. Here, in contrast, I feel like I'm working on a set of side projects. As a result, I care about the code quality much more.
 
 ### Conclusion
 
