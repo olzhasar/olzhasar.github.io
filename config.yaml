@@ -1,4 +1,4 @@
-baseURL: http://olzhasar.com/
+baseURL: https://olzhasar.com/
 languageCode: en-us
 title: Olzhas Arystanov
 
@@ -6,7 +6,7 @@ theme: hugo-flex
 params:
   summaries: true
   footer:
-    © Olzhas Arystanov 2021-2023
+    © Olzhas Arystanov 2021-2024
 
 menu:
   nav:
