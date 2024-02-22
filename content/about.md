@@ -4,6 +4,11 @@ title: About me
 
 Hi, I'm **Olzhas Arystanov**.
 
-I'm a software engineer with a primary focus on modern back-end and systems programming.
+I'm a software engineer specializing in backend development. I have rich experience building web applications, REST and GraphQL APIs, and microservices.
 
-I'm interested in various programming languages including Python, Go, C, TypeScript, and more.
+My primary language of choice is Python, but I'm also well-versed in Go, C, TypeScript, and Lua. I believe in the power of test-driven development (TDD) and have even authored a tool called [pytest-watcher](https://pypi.org/project/pytest-watcher/) for Python projects.
+
+You can find me on:
+
+- [Github](https://github.com/olzhasar/)
+- [LinkedIn](https://www.linkedin.com/in/olzhas-arystanov/)
