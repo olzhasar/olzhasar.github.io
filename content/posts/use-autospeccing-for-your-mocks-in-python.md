@@ -7,6 +7,8 @@ tags:
   - tdd
 ---
 
+Mocks are a powerful concept in testing. They are one of several types of [test doubles](https://martinfowler.com/bliki/TestDouble.html), which are objects that can be used in place of real objects in your tests. Mocks are used to isolate the code under test from the rest of the system, and to verify that the code under test interacts with its dependencies correctly. However, if not used properly, mocks can lead to false positives in your tests. One common pitfall is that mocks can be too permissive, allowing you to call methods that don't exist on the real object. This can lead to tests that pass even when the code under test is broken.
+
 Consider the following Python code:
 
 **foo.py**
