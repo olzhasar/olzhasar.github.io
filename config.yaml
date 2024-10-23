@@ -2,14 +2,14 @@ baseURL: https://olzhasar.com/
 languageCode: en-us
 title: Olzhas Arystanov
 
-theme: hugo-flex
+theme: PaperMod
 params:
-  summaries: true
-  footer:
-    © Olzhas Arystanov 2021-2024
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  disableSpecial1stPost: true
 
 menu:
-  nav:
+  main:
     - name: Posts
       url: /
       weight: 1
