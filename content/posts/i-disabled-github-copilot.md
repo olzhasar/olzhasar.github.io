@@ -1,0 +1,16 @@
+---
+title: "I Disabled Github Copilot"
+date: 2024-12-01T05:53:21+05:00
+draft: false
+---
+
+When I first started using Github Copilot, I felt quite uplifted about it. I set up the plugin in my editor (I use Neovim with `copilot.vim` plugin), and started enjoying the incredible amount of additional productivity I now possess. I no longer need to type the whole block of code that I came up with in my brain, all I need is a little hint to the model and everything is magically there. Incredible! How did I even live without it before? Well, after a year or so of using it both for professional work and my personal projects, I'm now making a conscious decision to remove it from my workflow (although I'm leaving the manual triggering option). Why would someone do such a weird thing in the AI-driven development era? Well, I took some time to seriously analyze the benefits it brings and the costs I incur (the actual financial cost being the least of significance), and I concluded that the latter greatly outweighs the former. Here is why:
+
+## Mental draining
+Similar to how CPU is limited in the amount of cycles per unit of time, I believe our brains are limited in terms of the amount of concepts they can process. With copilot, once you typed one or more symbols, there is already an AI-generated completion on the screen. You could be blindly pressing <TAB> on each such completion, but it's much more likely that you are verifying the completion for correctness (it produces nonsense way too often) even if you are not completely conscious about it. I found that this experience is much more exhausting for me than the actual typing part. The former is a mental exhaustion, the latter is the physical one. Human body was designed to do a lot more physical activity than most of us engage in, so I'm not particularly worried about extra fingers movements. But our brains, while being enormously powerful machines, were not necessarily designed to jump from one thing to another all the time. And this is exactly what's happening according to my observations - switching back and forth between your own thoughts and AI suggestions. You may feel extremely productive in the moment, but what happens is your brain is getting exhausted much quicker than you realize.
+
+## Skill deterioration
+Your skills as of an engineer, are the result of repetitive thinking about different problems over and over again. I think of them as paths through a rapidly growing grass field. Whenever I tackle some problem, I'm making my way through the field, forming a path. If I return to this or a similar problem again, it will be much easier to go through, because I cleaned a lot of grass the last time. If I don't revisit a particular path in a long time, the grass will grow over it. AI generated suggestions allow me to sort of jump through the grass without actually making the path. That might work in the short term, but in the long run, I'll likely drown in the grass not being able to even jump through it anymore.
+
+
+With that being said, I am by no means saying that I will completely remove AI from my toolkit as a software engineer. LLMs indeed make a lot of things much easier. However, I want to be able to explicitly decide whenever I need AI's help instead of being a moderator of tons of lines of codes than I never wrote.
