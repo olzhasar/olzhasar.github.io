@@ -1,8 +1,6 @@
 ---
 title: "The truth about becoming a self-taught software engineer"
 date: 2023-07-05T12:17:58+06:00
-tags:
-  - career advice
 ---
 
 I graduated from a university with a degree in Finance and immediately started my career in investment banking. After about 7 years of working in the industry, the realization came to me that it wasn't for me. So in my late 20s I decided to change my career path completely and become a software engineer. I did not have much time nor motivation to obtain another college degree, so I decided to take self learning path. And the transitioning process was much harder than I could imagine, it was probably the hardest thing I've ever done in my life.

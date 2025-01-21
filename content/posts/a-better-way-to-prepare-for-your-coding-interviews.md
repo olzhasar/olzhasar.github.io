@@ -6,8 +6,7 @@ aliases:
   - /a-better-way-to-prepare-for-your-tech-interviews/
 
 tags:
-  - coding interview
-  - leetcode
+  - programming
 ---
 
 I recently started applying to Big Tech companies, and as a result, I ended up solving a lot of LeetCode problems (284 problems at the time of writing this blog post). During the preparation process, it became clear to me why so many developers argue about the broken state of the tech interviewing process. Solving LeetCode problems takes a significant amount of time and energy that could otherwise be spent on building projects. However, I believe that the main issue lies not with the tech interviews themselves, but rather with the preparation process.

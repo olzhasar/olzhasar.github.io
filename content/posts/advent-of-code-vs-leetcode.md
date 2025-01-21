@@ -3,7 +3,7 @@ title: Advent of Code vs LeetCode
 date: 2023-05-20
 
 tags:
-  - leetcode
+  - programming
 ---
 
 I recently discovered the [Advent of Code](https://adventofcode.com/) project for myself and I absolutely loved it. At first glance, it seemed similar to solving `Leetcode` problems. However, after trying it for a few days now I realized that I like the experience much more. In this short blog post I'll try to break down main advantages that I see over `Leetcode`:

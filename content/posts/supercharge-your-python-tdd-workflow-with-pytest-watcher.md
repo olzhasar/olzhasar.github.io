@@ -4,8 +4,7 @@ date: 2023-06-08T05:37:36+06:00
 
 tags:
   - python
-  - pytest
-  - tdd
+  - programming
 ---
 
 If you follow the [Test-driven Development](https://en.wikipedia.org/wiki/Test-driven_development) practice in your Python projects, you need to run your test suite **often**. Having to run it manually can become tedious. You can configure handy shortcuts in your favorite IDE to make the process easier. But there is even better way using [`pytest-watcher`](https://pypi.org/project/pytest-watcher/).

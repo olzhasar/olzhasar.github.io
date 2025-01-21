@@ -6,9 +6,8 @@ aliases:
   - /optimizing-your-django-tests/
 
 tags:
-  - django
-  - pytest
   - python
+  - programming
 ---
 
 If you are working on a large Django project, you probably have lots of automated tests running as part of your CI/CD process. As long as tests run fast, everyone is happy. But as your application grows in complexity, your tests start to take more and more time to run and eventually become a real bottleneck. In this post, I will share some ideas that can help you optimize runtime of your test suite. I assume you are using **`pytest`**, but recommendations described in this post should be easily applicable to other runners as well.
