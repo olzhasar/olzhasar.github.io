@@ -21,7 +21,7 @@ serve:
 .PHONY: new
 new:
 	@read -p "Enter the name of the new post: " name; \
-	hugo new "content/posts/$${name}.md"
+	hugo new -k default -c "./content/posts/" "$${name}.md"
 
 .PHONY: clean
 clean:
