@@ -91,7 +91,6 @@ import aiohttp
 
 URL = "https://google.com/"
 
-connections = 0
 sem = asyncio.Semaphore(3)
 
 

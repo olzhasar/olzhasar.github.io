@@ -21,9 +21,11 @@ def main():
     return "Fetched: " + result
 
 def fetch_url(url: str) -> str:
-    response = requests.get()
+    response = requests.get(url)
     return response.text
 ```
+
+Note that `main()` calls `fetch_url()` without the required `url` argument — this is the bug we want our tests to catch.
 
 Let's say we would like to test our main function and we want to mock the piece of logic making external requests
 

@@ -4,7 +4,7 @@ date: 2024-12-02T03:42:54+05:00
 draft: false
 ---
 
-Celery is the default choice whenever there is a need to introduce a worker queue into Python projects. Not not exactly ideal, but it's feature-rich, gets the job done, and **can be reliable** when being used **properly**. Over the years of working with Celery, I've developed certain rules that I would recommend one to follow for building reliable background pipelines.
+Celery is the default choice whenever there is a need to introduce a worker queue into Python projects. Not exactly ideal, but it's feature-rich, gets the job done, and **can be reliable** when being used **properly**. Over the years of working with Celery, I've developed certain rules that I would recommend one to follow for building reliable background pipelines.
 
 ## Prefer late acknowledgement
 
@@ -18,9 +18,9 @@ Early acknowledgement has its good use cases too. Let's say you have a cleaning 
 
 ## Set timeouts
 
-Workers might get stuck. For reasons both within and beyond your control. There might be a subtle bug in the library that you are using resulting in a deadlock. Maybe an API client that you are using is configured to retry forever, but the server has changed it's API. List of maybes might be quite long.
+Workers might get stuck. For reasons both within and beyond your control. There might be a subtle bug in the library that you are using resulting in a deadlock. Maybe an API client that you are using is configured to retry forever, but the server has changed its API. List of maybes might be quite long.
 
-Setting a reasonable limit for task to execute will save you from occupying CPU cores for no reason and signalize the problem happening during the execution.
+Setting a reasonable limit for a task to execute will save you from occupying CPU cores for no reason and signal the problem happening during the execution.
 
 ## Configure priorities if applicable
 

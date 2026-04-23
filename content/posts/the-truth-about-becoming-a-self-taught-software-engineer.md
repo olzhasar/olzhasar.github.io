@@ -9,9 +9,9 @@ In this blog post, I would like to give people thinking about diving into softwa
 
 ## Software engineering is hard
 
-Contrary to what another youtube ad or a blog post on Medium try to convince you in, becoming a software engineer is extremely hard. You have to learn tons of things to even become a junior developer. I'm a back end engineer, so let's take this path as an example.
+Contrary to what another youtube ad or a blog post on Medium try to convince you of, becoming a software engineer is extremely hard. You have to learn tons of things to even become a junior developer. I'm a back end engineer, so let's take this path as an example.
 
-Bootcamps and online schools may assure you that all you need to learn is a general purpose programming language like Python or JavaScript and you will be all set. And they promise that you can learn a language in a couple of weeks. First of all, it take much longer to actually learn a language, even the one with a relatively low entry barrier (e.g. Python).
+Bootcamps and online schools may assure you that all you need to learn is a general purpose programming language like Python or JavaScript and you will be all set. And they promise that you can learn a language in a couple of weeks. First of all, it takes much longer to actually learn a language, even the one with a relatively low entry barrier (e.g. Python).
 
 Secondly and most importantly, learning a language alone is not even a major piece of the puzzle. In order to effectively build modern server side applications, you need to have a solid understanding of algorithms and data structures, software development practices, internet protocols, servers, databases, source control, containerization, and the list goes on. Do not believe anyone who assures you that you can learn everything in 6 months, it takes years to build knowledge in those areas.
 

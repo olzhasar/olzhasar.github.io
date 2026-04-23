@@ -14,10 +14,10 @@ If you are working on a large Django project, you probably have lots of automate
 
 ## Use a simple password hashing algorithm in your tests
 
-Django uses a strong password hashing algorithm ([`PBFDF2`](https://en.wikipedia.org/wiki/PBKDF2) at the time of writing this post) by default which is a sensible practice to ensure security of your applications. However, such level of security is (usually) not needed in tests. You can use a simple hashing algorithm to significantly reduce hashing operations time. Here is an example configuration block to put in your test settings:
+Django uses a strong password hashing algorithm ([`PBKDF2`](https://en.wikipedia.org/wiki/PBKDF2) at the time of writing this post) by default which is a sensible practice to ensure security of your applications. However, such level of security is (usually) not needed in tests. You can use a simple hashing algorithm to significantly reduce hashing operations time. Here is an example configuration block to put in your test settings:
 
 ```py3
-[
+PASSWORD_HASHERS = [
     "django.contrib.auth.hashers.MD5PasswordHasher",
 ]
 ```

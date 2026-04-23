@@ -22,7 +22,7 @@ You are not limited at all, you can even use [BrainFuck](https://esolangs.org/wi
 
 ### Feels like a real project
 
-I always hate the short-term nature of solving `Leetcode` problems. It makes me feel like I'm wasting time and instead of building something. Here, in contrast, I feel like I'm working on a set of side projects. As a result, I care about the code quality much more.
+I always hate the short-term nature of solving `Leetcode` problems. It makes me feel like I'm wasting time instead of building something. Here, in contrast, I feel like I'm working on a set of side projects. As a result, I care about the code quality much more.
 
 ### Conclusion
 
