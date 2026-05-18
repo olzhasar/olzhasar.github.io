@@ -21,7 +21,10 @@ serve:
 .PHONY: new
 new:
 	@read -p "Enter the name of the new post: " name; \
-	hugo new -k default -c "./content/posts/" "$${name}.md"
+	slug=$$(echo "$$name" | iconv -t ascii//TRANSLIT | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9]+/-/g; s/^-+|-+$$//g'); \
+	file="./content/posts/$${slug}.md"; \
+	hugo new -k default -c "./content/posts/" "$${slug}.md" && \
+	sed -i '' "s/^title: .*/title: \"$${name}\"/" "$${file}"
 
 .PHONY: clean
 clean:
